@@ -11,18 +11,30 @@ const validateNumber = (value) => {
 };
 
 
+const checkGuest = (guests) => {
+    if (guests === randomNumber) {
+        console.log("You Guest Correctly")
+    } else if (guests < randomNumber) {
+        console.log("Too Low! Try Again.")
+    } else if (guests > randomNumber) {
+        console.log("Too high! Try Again.")
+    }
+};
+
 const play = () => {
-    const number = prompt("Enter a number between 1 to 100 ")
+    const number = prompt("Enter a number between 1 to 100 ") ;
     
     if(number === null) {
         return;
-    }
+    } ;
 
     const validation = validateNumber(number);
     if (validation) {
         console.log(validation) ;
         return play();
-    }
+    } ;
+
+    checkGuest(+number) ;
 
 };
 
